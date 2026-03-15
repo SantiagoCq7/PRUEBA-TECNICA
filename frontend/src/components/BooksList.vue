@@ -8,7 +8,7 @@ defineProps({
 
 function formatRating(value) {
   if (value === null) {
-    return 'Sin resenas'
+    return 'Sin reseñas'
   }
 
   return Number(value).toFixed(2)

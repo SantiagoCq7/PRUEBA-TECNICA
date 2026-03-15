@@ -15,7 +15,7 @@ defineEmits(['submit'])
 
 <template>
   <section class="review-box">
-    <h2>Crear resena</h2>
+    <h2>Crear reseña</h2>
     <p class="review-box__hint">Este formulario consume <strong>POST /api/reviews</strong>.</p>
 
     <form class="review-form" @submit.prevent="$emit('submit')">
@@ -35,7 +35,7 @@ defineEmits(['submit'])
       </label>
 
       <button class="submit" type="submit" :disabled="isSubmitting">
-        {{ isSubmitting ? 'Guardando...' : 'Guardar resena' }}
+        {{ isSubmitting ? 'Guardando...' : 'Guardar reseña' }}
       </button>
     </form>
   </section>

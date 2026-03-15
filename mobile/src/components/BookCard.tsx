@@ -8,7 +8,7 @@ type Props = {
 export function BookCard({ book }: Props) {
   const average =
     book.average_rating === null
-      ? 'Sin resenas'
+      ? 'Sin reseñas'
       : Number(book.average_rating).toFixed(2);
 
   return (

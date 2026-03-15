@@ -25,9 +25,9 @@ Notas:
 - Si se prefiere MySQL o PostgreSQL, basta con cambiar `DATABASE_URL` en `backend/.env`.
 - Para Expo 55 se recomienda Node `>= 20.19.4`.
 
-## 3. Instalacion backend
+<!-- ## 3. Instalacion backendK -->
 
-```bash
+```bashJK
 git clone <repo-url>
 cd <repo>
 ```
@@ -138,11 +138,11 @@ Ejemplo de respuesta:
 
 Decision tecnica:
 
-- Si un libro no tiene resenas, `average_rating` se devuelve como `null`.
+- Si un libro no tiene reseñas, `average_rating` se devuelve como `null`.
 
 ### POST /api/reviews
 
-Registra una resena para un libro.
+Registra una reseña para un libro.
 
 Ejemplo de request:
 
@@ -174,7 +174,7 @@ Listado de libros:
 curl http://127.0.0.1:8000/api/books
 ```
 
-Crear resena:
+Crear reseña:
 
 ```bash
 curl -X POST http://127.0.0.1:8000/api/reviews \
@@ -235,9 +235,9 @@ Si `book_id` no existe y el resto del payload es valido, la API responde `400` c
 
 ## 9. Que cambiaria para escalar esta app a cientos de miles de libros y usuarios
 
-Separaria claramente lectura y escritura. Para `GET /api/books` usaria una proyeccion optimizada o una tabla/materialized view con ratings agregados por libro, evitando recalcular `AVG()` en tiempo real para trafico alto. Pondria cache HTTP y cache de aplicacion para listados frecuentes, con invalidacion al crear nuevas resenas.
+Separaria claramente lectura y escritura. Para `GET /api/books` usaria una proyeccion optimizada o una tabla/materialized view con ratings agregados por libro, evitando recalcular `AVG()` en tiempo real para trafico alto. Pondria cache HTTP y cache de aplicacion para listados frecuentes, con invalidacion al crear nuevas reseñas.
 
-En base de datos agregaria indices sobre `review.book_id`, fechas y campos de busqueda. Si el volumen crece mucho, consideraria particion de tablas de resenas y colas para tareas asincronas como recalculo de metricas, notificaciones o analytics.
+En base de datos agregaria indices sobre `review.book_id`, fechas y campos de busqueda. Si el volumen crece mucho, consideraria particion de tablas de reseñas y colas para tareas asincronas como recalculo de metricas, notificaciones o analytics.
 
 Para API y frontends, incorporaria autenticacion, rate limiting, observabilidad, logs estructurados y pruebas automatizadas. A nivel de infraestructura, desplegaria servicios stateless detras de un balanceador, almacenamiento de assets separado y un pipeline CI/CD con migraciones controladas.
 
@@ -246,7 +246,7 @@ Para API y frontends, incorporaria autenticacion, rate limiting, observabilidad,
 Fixtures incluidas:
 
 - 3 libros: `El Arte de Programar`, `Clean Code`, `Refactoring`
-- 6 resenas con variedad de ratings
+- 6 reseñas con variedad de ratings
 
 Comando de carga:
 

@@ -25,7 +25,7 @@ export function useCreateReview(onSuccess) {
       }
 
       await createReview(payload)
-      submitMessage.value = 'Resena creada correctamente.'
+      submitMessage.value = 'Reseña creada correctamente.'
       reviewForm.value.comment = ''
       reviewForm.value.rating = 5
 
@@ -35,7 +35,7 @@ export function useCreateReview(onSuccess) {
     } catch (error) {
       submitError.value = error instanceof Error
         ? error.message
-        : 'No se pudo crear la resena.'
+        : 'No se pudo crear la reseña.'
     } finally {
       isSubmitting.value = false
     }
