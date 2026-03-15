@@ -254,6 +254,3 @@ Comando de carga:
 php bin/console doctrine:fixtures:load
 ```
 
-## Video de demostracion
-
-Pendiente de agregar enlace publico a Google Drive o YouTube mostrando frontend Vue y frontend React Native funcionando.
